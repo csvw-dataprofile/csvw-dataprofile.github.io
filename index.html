@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>CSVW Data Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- ReSpec (W3C build). No build pipeline needed -->
+<script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+<script class="remove">
+  const respecConfig = {
+    specStatus: "CG-DRAFT",              // adjust if you want another status
+    edDraftURI: "https://csvw-dataprofile.github.io/",
+    shortName: "csvw-dataprofile",
+    github: "https://github.com/csvw-dataprofile/csvw-dataprofile.github.io",
+    editors: [
+      { name: "Your Name", url: "https://github.com/yourhandle" }
+    ],
+    // Optional: link to your issue tracker if different from github repo above
+    // githubAPI: "https://api.github.com/repos/csvw-dataprofile/csvw-dataprofile.github.io",
+    // Linting can be helpful during drafting
+    lint: { "no-http-props": false }
+  };
+</script>
+
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  .note { background: #f6f7f9; padding: 0.75rem 1rem; border-left: 4px solid #d0d7de; }
+</style>
+
+<section id="abstract">
+  <p>
+    This specification defines the CSVW Data Profile: conventions and metadata
+    patterns for describing tabular datasets using CSV on the Web (CSVW) and JSON-LD.
+  </p>
+</section>
+
+<section id="sotd">
+  <p class="note">
+    Status: Draft for review. Feedback via
+    <a href="https://github.com/csvw-dataprofile/csvw-dataprofile.github.io/issues">GitHub Issues</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Introduction</h2>
+  <p>
+    The CSVW Data Profile provides guidance for publishing consistent, machine-readable
+    tabular data descriptions compatible with CSVW metadata and linked data practices.
+  </p>
+  <p>
+    This document is maintained by the csvw-dataprofile organization. It is published
+    at <a href="https://csvw-dataprofile.github.io/">https://csvw-dataprofile.github.io/</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Scope</h2>
+  <ul>
+    <li>Recommended CSVW metadata fields and patterns</li>
+    <li>JSON-LD contexts and terms for profiling</li>
+    <li>Validation expectations and examples</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Examples</h2>
+  <pre class="example" title="Minimal CSVW metadata">
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "data.csv",
+  "tableSchema": {
+    "columns": [
+      {"name": "time", "titles": "time", "datatype": "dateTime"},
+      {"name": "height_cm", "titles": "height_cm", "datatype": "integer"}
+    ],
+    "primaryKey": "time"
+  }
+}
+  </pre>
+</section>
+
+<section>
+  <h2>Conformance</h2>
+  <p>
+    Conformance requirements appear as RFC 2119/8174 keywords (MUST, SHOULD, MAY).
+  </p>
+</section>
+
+</html>
